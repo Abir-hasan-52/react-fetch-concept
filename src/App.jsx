@@ -27,9 +27,9 @@ function App() {
       </Suspense>
       <h2>my turn</h2>
 
-      <Suspense fallback={<h3>trying to connect...</h3>}> 
+      {/* <Suspense fallback={<h3>trying to connect...</h3>}> 
         <Users fetchUsers={fetchUsers} ></Users>
-      </Suspense>
+      </Suspense> */}
        
     </>
   )
