@@ -3,8 +3,15 @@ import { Suspense } from 'react'
 import './App.css'
 import Fetch from './Fetch'
 import Users from './Users'
+import Posts from './Posts'
+
+// post
+
+const fetchPosts= fetch('https://jsonplaceholder.typicode.com/posts')
+.then(res => res.json())
 
 
+// uses
 const fetchUsers= fetch('https://jsonplaceholder.typicode.com/users')
 .then(res => res.json())
 
@@ -27,9 +34,14 @@ function App() {
       </Suspense>
       <h2>my turn</h2>
 
-      {/* <Suspense fallback={<h3>trying to connect...</h3>}> 
+      <Suspense fallback={<h3>trying to connect...</h3>}> 
         <Users fetchUsers={fetchUsers} ></Users>
-      </Suspense> */}
+      </Suspense>
+
+      <h2>my turn2</h2>
+      <Suspense fallback={<h3>all post loading...</h3>}>
+        <Posts fetchPosts={fetchPosts} > </Posts>
+      </Suspense>
        
     </>
   )
